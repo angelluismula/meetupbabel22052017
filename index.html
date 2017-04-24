@@ -1,0 +1,353 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>DevOps como cultura; Dime como provisionas y te diré como eres</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<link href="https://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background-image="images/fondos/nubes.jpg" >
+						<h2 style="color:black">DevOps como cultura; Dime como provisionas y te diré como eres.</h2>
+							Juan Vicente Herrera y Ángel Luis Mula.
+				</section>
+				<section style="color:yellow" data-background-image="images/fondos/P8240117.jpg">
+        	<h3 style="color:yellow">Sobre mi (Ángel Luis Mula)</h3>
+					<ul>
+					<li>18 años trabajando en el area de sistemas.</liS>
+					<li>Trabajo en babel</li>
+					<li>Aficiones: Juegos de mesa y buceo.</li>
+					<li<i class="fa fa-twitter" aria-hidden="true"></i>@angelluismula </li>
+					<i class="fa fa-envelope" aria-hidden="true"></i>angelluis.mula@babel.es</li>
+				</ul>
+				</section>
+				<section data-background-image="images/fondos/azohia.jpg">
+					<h3>Sobre mi (Juan Vicente Herrera)</h3>
+					<ul>
+					<li>XXXXX.</li>
+					<li>Trab</li>
+					<li>Aficiones:XXXXX.</li>
+					<li<i class="fa fa-twitter" aria-hidden="true"></i>@XXXX </li>
+					<i class="fa fa-envelope" aria-hidden="true"></i>XXXX@xxxx.es</li>
+				</ul>
+				</section>
+				<section data-background-image="images/fondos/homer.jpg">
+					<h3>¿Que es Devops?</h3>
+					DevOps es una cultura
+    		</section>
+				<section data-background="#76608A">
+					<h3>Hagamos un juego.</h3>
+					<ul>
+					<li>El reto es simple: Intenta comunicar lo que aparece en el cuaderno a tu vecino de al lado.</li>
+					<li>Abre el cuaderno. Si tiene un texto haz un dibujo de lo que describe. Si hay un dibujo escribe una frase o palabra de lo que representa</li>
+					<li>Cuando lo tengas, pasa el cuaderno de tal forma que solo se vea lo que has dibujado/escrito.</li>
+					<li>¿Parece facil, no? Aumentemos la dificultad intentando que el cuaderno llegue hasta la ultima persona de la fila antes de que acabe el video.</li>
+					</ul>
+
+				</section>
+				<section data-background="#76608A">
+        	<h3>Cultura:</h3>
+					<ul>
+					<li>No es un conjunto de herramientas</li>
+					<li>No es <b>SOLO</b> una discriplina tecnica: Incluye a más equipos que a desarrollo y sistemas</li>
+					<li>Es un conjunto de tecnicas y filosofias.</li>
+					</ul>
+				</section>
+				<section data-background="#76608A">
+        	<table>
+						<tr><td><img src="images/jokes/devops01.jpg"></td><td><img src="images/jokes/devops02.jpg"></td><td><img src="images/jokes/devops03.jpg"></td></tr>
+						<tr><td><img src="images/jokes/devops04.jpg"></td><td><img src="images/jokes/devops05.jpg"></td><td><img src="images/jokes/devops06.jpg"></td></tr>
+					</table>
+				</section>
+				<section data-background-image="images/fondos/tiburones.jpg">
+        	<h3>Infraestructura como codigo</h3>
+					"Is the process of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools"
+				</section>
+				<section data-background="#FA6800">
+        	<h3>Ventajas:</h3>
+					Convierte nuestro flujo de aplicación en:
+					<ul>
+						<li>Versionable</li>
+						<li>Auditable</li>
+						<li>Repetible</li>
+						<li>y un proceso colaborativo</li>
+					</ul>
+				</section>
+				<section data-background="#FA6800">
+					<h3>Conceptos claves:</h3>
+				<ul>
+					<li>La infraestructura no solo son maquinas virtuales</li>
+				</ul>
+				</section>
+				<section data-background="#FA6800">
+					<h3>Martin Fowler</h3>
+					<img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/martinfowler.jpg">
+				</section>
+				<section data-background="#FA6800">
+					<h3>CI, CD y cd</h3>
+				</section>
+				<section data-background="#FA6800">
+        	<h3>El ciclo de vida de una aplicación.</h3>
+					<img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/esquemaclasico.png">
+				</section>
+				<section data-background="#FA6800">
+					<h3>Paradigma 1: Pets Vs Cattle</h3>
+					<img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/pets_vs_cattle.png">
+				</section>
+				<section data-background="#FA6800">
+					<h3>Paradigma 2: Snowflakes Vs Phoenix</h3>
+					<img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/snowflake-versus-phoenix.png">
+				</section>
+				<section data-background="#FA6800">
+					<h3>Infraestructura inmutable</h3>
+					<img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/infrainmutable.png">
+				</section>
+				<section data-background="#FA6800">
+					<h3>Stateless</h3>
+				</section>
+				<section data-background="#FA6800">
+					<h3>Computación elástica (ahorro de pasta)</h3>
+				</section>
+				<section data-background="#FA6800">
+					<h3>Resiliencia</h3>
+					<img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/pinocanario.jpg">
+					<p class="fragment fade-in">En sistemas tecnológicos, capacidad de un sistema de soportar y recuperarse ante desastres y perturbaciones</p>
+				</section>
+				<section data-background="#FA6800">
+        	<h3>Consejos</h3>
+					<ul>
+						<li>Los metadatos son tus amigos: tags everywhere!</li>
+						<li>Usa software de control de versiones estilo git</li>
+						<li>Automatiza todo. Crea workflows que validen tus definiciones</li>
+					</ul>
+				</section>
+				<section data-background="#76608A">
+        	<h3>Hablemos de herramientas</h3>
+					<ul>
+						<li>La mejor herramienta es la que te soluciona el problema.</li>
+						<li>Depende tu tipo de infraestructura necesitaras una o un conjunto de ellas</li>
+					</ul>
+				</section>
+				<section data-background="#76608A">
+					<h3>Disclaimer</h3>
+				</section>
+				<section data-background-image="images/fondos/P8310579.jpg">
+					<img  style="background:none; border:none; box-shadow:none;" src="images/logos/packer.jpg">
+				</section>
+				<section data-background="#27AE60">
+					<h3>Workflow</h3>
+					<img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/packerworkflow.jpg">
+				</section>
+				<section data-background="#27AE60">
+<table>
+	<tr>
+		<td>Builders</td>
+		<td>Provisioners</td>
+		<td>Post-Processors</td>
+	</tr>
+	<tr>
+		<td valign="top">
+			<ul>
+				<li>Amazon EC2</li>
+				<li>Azure</li>
+				<li>CloudStack</li>
+				<li>DigitalOcean</li>
+				<li>Docker</li>
+				<li>File</li>
+				<li>Google Cloud</li>
+				<li>Hyper-V</li>
+				<li>Null</li>
+				<li>1&1</li>
+				<li>OpenStack</li>
+				<li>Parallels</li>
+				<li>ProfitBricks</li>
+				<li>QEMU</li>
+				<li>Triton</li>
+				<li>VirtualBox</li>
+				<li>VMware</li>
+				<li>Custom</li>
+			</ul>
+		</td>
+		<td valign="top">
+			<ul>
+				<li>Ansible Local</li>
+				<li>Ansible Remote</li>
+				<li>Chef Client</li>
+				<li>Chef Solo</li>
+				<li>Converge</li>
+				<li>File</li>
+				<li>PowerShell</li>
+				<li>Puppet Masterless</li>
+				<li>Puppet Server</li>
+				<li>Salt Masterless</li>
+				<li>Shell</li>
+				<li>Shell (Local)</li>
+				<li>Windows Shell</li>
+				<li>Windows Restart</li>
+				<li>Custom</li>
+			</ul>
+		</td>
+		<td valign="top">
+			<ul>
+				<li>Amazon Import</li>
+				<li>Artifice</li>
+				<li>Atlas</li>
+				<li>Compress</li>
+				<li>Checksum</li>
+				<li>Docker Import</li>
+				<li>Docker Push</li>
+				<li>Docker Save</li>
+				<li>Docker Tag</li>
+				<li>Google Compute Export</li>
+				<li>Manifest</li>
+				<li>Shell (Local)</li>
+				<li>Vagrant</li>
+				<li>Vagrant Cloud</li>
+				<li>vSphere</li>
+			</ul>
+		</td>
+	</tr>
+</table>
+				</section>
+				<section data-background-image="images/fondos/GOPR1317.jpg">
+					<img style="background:none; border:none; box-shadow:none;" src="images/logos/terraform.png">
+				</section>
+				<section data-background="#27AE60">
+					<h3>Estado deseado vs</h3>
+				</section>
+				<section data-background-image="images/fondos/naia.jpg">
+					<img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/logos/ansible.png">
+				</section>
+				<section>
+					<h3>CARACTERISTICAS</h3>
+					<ul>
+						<li>Idempotente</li>
+						<li>No almacena estado</li>
+					</ul>
+				</section>
+				<section data-background="#1BA1E2">
+					<h3>No solo herramientas de despliegue (uso en la operación)</h3>
+				</section>
+				<section data-background="#1BA1E2">
+					<h3>Push vs Pull</h3>
+				</section>
+				<section data-background-image="images/fondos/cenote.jpg">
+					<img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/logos/rundeck.png">
+				</section>
+				<section data-background-image="images/fondos/hierro.jpg">
+					<h3>Nuevos retos en aplicaciones basadas en microservicios</h3>
+				</section>
+				<section data-background="#647687">
+					<h3>Hardware / platform agnostic</h3>
+				</section>
+				<section data-background="#647687">
+					<h3>Serverless (Lambda, FaaS)</h3>
+				</section>
+				<section data-background="#647687">
+					<h3>Service discovery</h3>
+				</section>
+				<section data-background-image="images/fondos/puffins.jpg">
+					<img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/logos/Docker.png">
+				</section>
+				<section data-background="#A4C400">
+					<h3>Contenedores Vs Maquinas virtuales</h3>
+					<img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/VM-Diagram.png">
+				</section>
+				<section data-background="#A4C400">
+					<h3>Herramientas nativas de docker</h3>
+					<ul>
+						<li>Dockerfile</li>
+						<li>Compose</li>
+						<li>Machine</li>
+						<li>Swarm</li>
+						<li>Linuxkit</li>
+						<li>Infrakit</li>
+				</section>
+				<section data-background="#A4C400">
+					<h3>Dockerfile</h3>
+				<pre><code class="Dockerfile">
+FROM alpine:3.3
+RUN apk add --update dnsmasq && rm -rf /var/cache/apk/*
+VOLUME /etc/dnsmasq
+COPY boot.sh .
+CMD /bin/sh boot.sh
+				</code></pre>
+			</section>
+				<section data-background-image="images/fondos/gcanaria.jpg">
+					<h3>Nuevos retos</h3>
+				</section>
+				<section data-background="#F472D0">
+				<h3>En operación:</h3>
+				<ul>
+					<li>Automatizar todo</li>
+					<li>Mecanismos que permitan tomar decisiones agiles</li>
+					<li>Autodocumentación</li>
+					<li>Pruebas continuas (Chaos monkey)</li>
+					<li>Auditar</li>
+				</ul>
+			</section>
+				<section data-background="#F472D0">
+					<h3>En monitorización: </h3>
+					<ul>
+						<li>Medir el servicio no solo los procesos</li>
+						<li>Los logs son utiles para todos los despartamentos</li>
+						<li>Metricas</li>
+						<li>Usos avanzados: Detección de anomalías, traceo de la operación de principio a fin (opentrace o similar)</li>
+					</ul>
+				</section>
+				<section data-background="#F472D0">
+					<h3>Despliegues: Canary y blue-green</h3>
+					<img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/canary-bluegreen.png">
+				</section>
+				<section data-background="#F472D0">
+					<h3>Adaptabilidad y automatismos:</h3>
+					<ul>
+						<li>Selfhealing</li>
+						<li>Auto escalado</li>
+						<li>Diseño orientado a servicio (Netflix)</li>
+					</ul>
+				</section>
+				<section data-background="#F472D0">
+					<h2>¿Preguntas?</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				center: false,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
