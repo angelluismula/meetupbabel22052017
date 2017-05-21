@@ -347,6 +347,16 @@ COPY boot.sh .
 CMD /bin/sh boot.sh
 				</code></pre>
 			</section>
+			<section data-background="#A4C400">
+					<h3>docker-compose.yml</h3>
+				<pre><code class="Dockerfile">
+FROM alpine:3.3
+RUN apk add --update dnsmasq && rm -rf /var/cache/apk/*
+VOLUME /etc/dnsmasq
+COPY boot.sh .
+CMD /bin/sh boot.sh
+				</code></pre>
+			</section>
 				<section data-background-image="images/fondos/gcanaria.jpg">
 					<h3>Nuevos retos</h3>
 				</section>
