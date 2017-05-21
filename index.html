@@ -264,6 +264,36 @@
 					</ul>
 				</section>
 				<section data-background="#1BA1E2">
+					<h3>Tarea</h3>
+					<pre><code class="yml">
+- name: add a consultant whose account you want to expire
+  user:
+    name: james18
+    shell: /bin/zsh
+    groups: developers
+    expires: 1422403387
+				</code></pre>
+				</section>
+				<section data-background="#1BA1E2">
+					<h3>Rol</h3>
+					<pre><code class="bash">
+├── default
+│   └── main.yml
+├── handlers
+│   └── main.yml
+├── meta
+│   └── main.yml
+├── tasks
+│   └── main.yml
+├── templates
+│   └── conf.j2
+├── tests
+│   ├── inventory
+│   └── test.yml
+└── vars
+				</code></pre>
+				</section>
+				<section data-background="#1BA1E2">
 					<h3>No solo herramientas de despliegue</h3>
 					 Dado que podemos condicionar la ejecución de tareas/roles con variables y tags y limitar a que maquinas se aplican, podemos escribir nuestros playbooks y roles pensando en la operación...
 					<ul>
