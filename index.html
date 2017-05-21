@@ -328,35 +328,106 @@
 					<img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/VM-Diagram.png">
 				</section>
 				<section data-background="#A4C400">
-					<h3>Herramientas nativas de docker</h3>
+					<h3>Ventajas</h3>
 					<ul>
-						<li>Dockerfile</li>
-						<li>Compose</li>
-						<li>Machine</li>
-						<li>Swarm</li>
-						<li>Linuxkit</li>
-						<li>Infrakit</li>
+						<li>Empaqueta aplicaciones no servidores completos</li>
+						<li>Ligeros: Footprint y ocupación en disco (capas) bajos</li>
+						<li>Seguridad: Superficie de ataque menor. Perfiles seguridad nivel kernel</li>
+						<li>Autocontenidos: Empaquetado con las dependencias, transportable entre plataformas</li>
+						<li>Modular: Podemos componer nuestra stack a medida</li>
+						<li>Monitorización y logs centralizado (multiples backends)</li>
+					</ul>
 				</section>
 				<section data-background="#A4C400">
+					<h3>Herramientas nativas de docker</h3>
+					<ul>
+						<li><b>Dockerfile</b></li>
+						<li><b>Compose</b></li>
+						<li>Machine</li>
+						<li>Swarm</li>
+						<li><b>Linuxkit</b></li>
+						<li><b>Infrakit</b></li>
+				</section>
+<section data-background="#A4C400">
 					<h3>Dockerfile</h3>
 				<pre><code class="Dockerfile">
-FROM alpine:3.3
-RUN apk add --update dnsmasq && rm -rf /var/cache/apk/*
-VOLUME /etc/dnsmasq
-COPY boot.sh .
-CMD /bin/sh boot.sh
+FROM golang as builder
+COPY . /code
+WORKDIR /code
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=arm go build -a -installsuffix cgo http.go
+
+FROM scratch
+COPY --from=builder /code/http /http
+EXPOSE 8080
+CMD ["/http"]
 				</code></pre>
 			</section>
+				<section data-background="#A4C400">
+					<h3>Dockercompose.yml</h3>
+				<pre><code class="Dockercomposefile">
+version: "3"
+services:
+  db:
+    image: postgres:9.4
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - backend
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+  result:
+    image: dockersamples/examplevotingapp_result:before
+    ports:
+      - 5001:80
+    networks:
+      - backend
+    depends_on:
+      - db
+ ...
+				</code></pre>
+			</section>
+				<section data-background="#A4C400">
+					<h3>Swarm</h3>
+					Orquestador y cluster nativo de Docker Inc.
+					<ul>
+						<li>Service discovery</li>
+						<li>Routing Mesh</li>
+						<li>Selfhealing</li>
+						<li>Swarm mode incluido con cliente docker</li>
+						<li>Permite mezclar nodos de diferentes arquitecturas y S.O</li>
+					</ul>
+				</section>			
 			<section data-background="#A4C400">
-					<h3>docker-compose.yml</h3>
-				<pre><code class="Dockerfile">
-FROM alpine:3.3
-RUN apk add --update dnsmasq && rm -rf /var/cache/apk/*
-VOLUME /etc/dnsmasq
-COPY boot.sh .
-CMD /bin/sh boot.sh
-				</code></pre>
+				<h3>Linuxkit</h3>
+				<pre><code class="yml">
+kernel:
+  image: "linuxkit/kernel:4.9.x"
+  cmdline: "console=ttyS0 console=tty0 page_poison=1"
+init:
+  - linuxkit/init:cbd7ae748f0a082516501a3e914fa0c924ee941e
+  - linuxkit/runc:24dfe632ed3ff53a026ee3fac046fd544434e2d6
+  - linuxkit/containerd:f1130450206d4f64f0ddc13d15bb68435aa1ff61
+onboot:
+  - name: dhcpcd
+    image: "linuxkit/dhcpcd:cb96c09a33c166eca6530f166f0f79927c3e83b0"
+    binds:
+     - /var:/var
+     - /tmp/etc:/etc
+    capabilities:
+     - CAP_NET_ADMIN
+ ...
+    command: ["/sbin/dhcpcd", "--nobackground", "-f", "/dhcpcd.conf", "-1"]
+...
+outputs:
+  - format: kernel+initrd
+			</code></pre>
 			</section>
+			
+				<section data-background="#A4C400">
+					<h3>Infrakit</h3>
+					<img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/infrakit.png">
+				</section>
 				<section data-background-image="images/fondos/gcanaria.jpg">
 					<h3>Nuevos retos</h3>
 				</section>
