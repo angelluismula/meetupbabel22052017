@@ -26,7 +26,8 @@
 		<div class="reveal">
 			<div class="slides">
 				<section data-background-image="images/fondos/portada.png" data-background-size="contain">
-
+						
+							Juan Vicente Herrera y Ángel Luis Mula.
 				</section>
 				<section style="color:yellow" data-background-image="images/fondos/P8240117.JPG">
         	<h3 style="color:yellow">Sobre mi (Ángel Luis Mula)</h3>
@@ -46,12 +47,14 @@
 					<li>Aficiones:Gamer y runner.</li>
 					<li<i class="fa fa-twitter" aria-hidden="true"></i>@jvicenteherrera </li>
 					<i class="fa fa-envelope" aria-hidden="true"></i>juan.vicente.herrera@gmail.com</li>
+					<img src="images/logos/customLogoDevOps.gif">
+					<li>madrid.devops.es</li>
+					<li<i class="fa fa-twitter" aria-hidden="true"></i>@madriddevops </li>
+
+					
 				</ul>
 				</section>
-				<section data-background-image="images/fondos/devops.png">
-					<h3>¿Que es Devops?</h3>
-					DevOps es una cultura
-    		</section>
+			
 				<section data-background="#76608A">
 					<h3>Hagamos un juego.</h3>
 					<ul>
@@ -61,6 +64,9 @@
 					<li>¿Parece facil, no? Aumentemos la dificultad intentando que el cuaderno llegue hasta la ultima persona de la fila antes de que acabe el video.</li>
 					</ul>
 				</section>
+					<section data-background-image="images/fondos/devops.png" data-background-size="contain">
+					<h3>¿Que es Devops?</h3>
+    		</section>
 				<section data-background="#76608A">
 					<h3>Temporizador</h3>
 					<video controls>
@@ -82,7 +88,7 @@
 					</table>
 				</section>
 
-				<section style="color:blue" data-background-image="images/fondos/99-sistema-como-todo.png">
+				<section style="color:blue" data-background-image="images/fondos/99-sistema-como-todo.png" data-background-size="contain">
 				</section>
 				<section style="color:blue" data-background-image="images/fondos/infcode.jpg">
         	<h3 style="color:blue">Infraestructura como codigo</h3>
@@ -129,6 +135,13 @@
 				</section>
 				<section data-background="#FA6800">
 					<h3>Stateless</h3>
+				<ul>
+					<li>No guarda información de Estado</li>
+					<li>Simple de diseñar</li>
+					<li>Reiniciar el servidor no pierde información de estado</li>
+					<li>Ideal para autoscaling, imágenes, contenedores...</li>
+				</ul>
+
 				</section>
 				<section data-background="#FA6800">
 					<h3>Computación elástica (ahorro de pasta)</h3>
@@ -235,12 +248,21 @@
 					</video>
 					
   				</section>
+  				<section data-background-image="images/fondos/GOPR1317.JPG">
+  					<h3>Desired state</h3>
+					 Se trata de realizar las acciones necesarias para que desde el estado actual del sistema se alcance el estado deseado del sistema.
+					 <ul>
+					 	<li>Instalar requisitos para el funcionamiento de la aplicación</li>
+					 	<li>Instalar la aplicación</li>
+					 </ul>
+				</section>
 				<section data-background-image="images/fondos/GOPR1317.JPG">
-					<img style="background:none; border:none; box-shadow:none;" src="images/logos/terraform.png">
+					Terraform DEMO
+					<video controls>
+						<source data-src="videos/Terraform.mp4" type="video/mp4" />
+					</video>
 				</section>
-				<section data-background="#27AE60">
-					<h3>Estado deseado vs</h3>
-				</section>
+			
 				<section data-background-image="images/fondos/naia.jpg">
 					<img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/logos/ansible.png">
 				</section>
@@ -313,13 +335,12 @@
 				</section>
 				<section data-background="#1BA1E2">
 					<h3>Push vs Pull</h3>
+					<ul>
+						<li>Push es cuando los cambios de despliegue y de infraestructura se envían desde un lugar central hacia los servidores<br>Ejecución remota instantanea</li>
+						<li>Pull es cuando cada servidor consulta un lugar central para implementación y cambios de infraestructura y aplica los cambios localmente<br>Ejecución remota no instantanea</li>
 					<table>
 						<tr>
 							<td align="center" colspan="2"><img src="images/push-vs-pull.png"></td>
-						</tr>
-						<tr>
-							<td>El servidor llama al cliente<br>Ejecución remota instantanea</td>
-							<td>El cliente llama al servidor<br>Ejecución remota no instantanea</td>
 						</tr>
 					</table>
 				</section>
