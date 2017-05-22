@@ -29,29 +29,28 @@
 						
 							Juan Vicente Herrera y Ángel Luis Mula.
 				</section>
-				<section style="color:yellow" data-background-image="images/fondos/P8240117.JPG">
-        	<h3 style="color:yellow">Sobre mi (Ángel Luis Mula)</h3>
+				<section style="color:deepskyblue; text-shadow:1px 1px darkblue" data-background-image="images/fondos/P8240117.JPG">
+        	<h3 style="color:deepskyblue; text-shadow:1px 1px darkblue">Sobre mi (Ángel Luis Mula)</h3>
 					<ul>
 					<li>18 años trabajando en el area de sistemas.</liS>
 					<li>Trabajo en Babel</li>
 					<li>Aficiones: Juegos de mesa y buceo.</li>
-					<li<i class="fa fa-twitter" aria-hidden="true"></i>@angelluismula </li>
-					<i class="fa fa-envelope" aria-hidden="true"></i>angelluis.mula@babel.es</li>
+					<li><i class="fa fa-twitter" aria-hidden="true"></i>@angelluismula </li>
+					<li><i class="fa fa-envelope" aria-hidden="true"></i>angelluis.mula@babel.es</li>
 				</ul>
+				<img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/logos/babel.png">
 				</section>
-				<section data-background-image="images/fondos/runner.jpg">
-					<h3>Sobre mi (Juan Vicente Herrera)</h3>
+				<section style="color:deepskyblue; text-shadow:1px 1px darkblue" data-background-image="images/fondos/runner.jpg">
+					<h3 style="color:deepskyblue; text-shadow:1px 1px darkblue">Sobre mi (Juan Vicente Herrera)</h3>
 					<ul>
 					<li>12 años trabajando en el mundo de la tecnología.</li>
 					<li>Trabajo en Logtrust</li>
 					<li>Aficiones:Gamer y runner.</li>
-					<li<i class="fa fa-twitter" aria-hidden="true"></i>@jvicenteherrera </li>
-					<i class="fa fa-envelope" aria-hidden="true"></i>juan.vicente.herrera@gmail.com</li>
-					<img src="images/logos/customLogoDevOps.gif">
+					<li><i class="fa fa-twitter" aria-hidden="true"></i>@jvicenteherrera </li>
+					<li><i class="fa fa-envelope" aria-hidden="true"></i>juan.vicente.herrera@gmail.com</li>
+					<img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/logos/customLogoDevOps.gif">
 					<li>madrid.devops.es</li>
-					<li<i class="fa fa-twitter" aria-hidden="true"></i>@madriddevops </li>
-
-					
+					<li<i class="fa fa-twitter" aria-hidden="true"></i>@madriddevops </li>				
 				</ul>
 				</section>
 			
@@ -64,15 +63,15 @@
 					<li>¿Parece facil, no? Aumentemos la dificultad intentando que el cuaderno llegue hasta la ultima persona de la fila antes de que acabe el video.</li>
 					</ul>
 				</section>
-					<section data-background-image="images/fondos/devops.png" data-background-size="contain">
-					<h3>¿Que es Devops?</h3>
-    		</section>
 				<section data-background="#76608A">
 					<h3>Temporizador</h3>
 					<video controls>
 						<source data-src="videos/tempoacelerado.mp4" type="video/mp4" />
 					</video>
 				</section>
+				<section data-background-image="images/fondos/devops.png" data-background-size="contain">
+					<h3>¿Que es Devops?</h3>
+    		</section>
 				<section data-background="#76608A">
         	<h3>Cultura:</h3>
 					<ul>
@@ -241,28 +240,39 @@
 	</tr>
 </table>
 				</section>
-				<section class="cover" data-background="#27AE60">
+				<section data-background="#27AE60">
 					<h3>Demo</h3>
 					<video controls>
 						<source data-src="videos/packerEditado.mp4" type="video/mp4" />
 					</video>
 					
   				</section>
-  				<section data-background-image="images/fondos/GOPR1317.JPG">
+  				
+				<section data-background-image="images/fondos/GOPR1317.JPG">
+					<img style="background:none; border:none; box-shadow:none;" src="images/logos/terraform.png">
+				</section>
+				<section data-background="#0406AA">
   					<h3>Desired state</h3>
 					 Se trata de realizar las acciones necesarias para que desde el estado actual del sistema se alcance el estado deseado del sistema.
 					 <ul>
 					 	<li>Instalar requisitos para el funcionamiento de la aplicación</li>
 					 	<li>Instalar la aplicación</li>
 					 </ul>
+					 * Terraform es <b>destructivo</b>. Si la configuración no coincide destruye y crea.
 				</section>
-				<section data-background-image="images/fondos/GOPR1317.JPG">
+				<section data-background="#0406AA">
 					Terraform DEMO
 					<video controls>
 						<source data-src="videos/Terraform.mp4" type="video/mp4" />
 					</video>
 				</section>
-			
+				<section data-background="#0406AA">
+					<h3>Consejos</h3>
+					 <ul>
+					 	<li>Cuidado con el .tfstate (directorio compartido versionado [S3, minio])</li>
+					 	<li>Ejecuta antes siempre plan para no llevarte sorpresas</li>
+					 </ul>
+				</section>
 				<section data-background-image="images/fondos/naia.jpg">
 					<img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/logos/ansible.png">
 				</section>
@@ -273,7 +283,7 @@
 						<li>Sencillo: YAML y jinja2</li>
 						<li>Facil añadir metadata</li>
 						<li>Gran cantidad de modulos y roles</li>
-						<li>Multiplataforma</li>
+						<li>Multiplataforma (escrito en python)</li>
 						<li>No almacena estado</li>
 					</ul>
 				</section>
@@ -335,13 +345,15 @@
 				</section>
 				<section data-background="#1BA1E2">
 					<h3>Push vs Pull</h3>
-					<ul>
-						<li>Push es cuando los cambios de despliegue y de infraestructura se envían desde un lugar central hacia los servidores<br>Ejecución remota instantanea</li>
-						<li>Pull es cuando cada servidor consulta un lugar central para implementación y cambios de infraestructura y aplica los cambios localmente<br>Ejecución remota no instantanea</li>
 					<table>
 						<tr>
 							<td align="center" colspan="2"><img src="images/push-vs-pull.png"></td>
 						</tr>
+						<tr>
+						<tr>
+ 							<td>El servidor llama al cliente<br>Ejecución remota instantanea</td>
+ 							<td>El cliente llama al servidor<br>Ejecución remota no instantanea</td>
+ 						</tr>
 					</table>
 				</section>
 				<section data-background-image="images/fondos/cenote.jpg">
@@ -370,6 +382,14 @@
 					</ul>
 				</section>
 				<section data-background="#647687">
+					<h3>Service discovery</h3>
+					<pre>Detección automatica de dispositivos y servicios en una red.</pre>
+					<ul>
+						<li>Mediante DNS</li>
+						<li>BD KV: Zookeeper, Consul, etcd, swarm...</li>
+					</ul>
+				</section>
+				<section data-background="#647687">
 					<h3>Serverless</h3>
 					<ul>
 						<li>Referentes: AWS Lambda / Azure functions</li>
@@ -378,15 +398,7 @@
 						<li>Ej: www.get-faas.com</li>
 					</ul>
 				</section>
-				<section data-background="#647687">
-					<h3>Service discovery</h3>
-					Detección automatica de dispositivos y servicios en una red.
-					<ul>
-						<li>Mediante DNS</li>
-						<li>BD KV: Zookeeper, Consul, etcd, swarm...</li>
-					</ul>
-				</section>
-				<section data-background-image="images/fondos/puffins.jpg">
+				<section data-background-image="images/fondos/puffins.JPG">
 					<img class="stretch" style="background:none; border:none; box-shadow:none;" src="images/logos/Docker.png">
 				</section>
 				<section data-background="#A4C400">
