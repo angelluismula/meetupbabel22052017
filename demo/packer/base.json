@@ -1,0 +1,62 @@
+{
+  "variables": {
+    "aws_access_key": "",
+    "aws_secret_key": ""
+  },
+  "builders": [{
+    "type": "amazon-ebs",
+    "access_key": "{{user `aws_access_key`}}",
+    "secret_key": "{{user `aws_secret_key`}}",
+    "region": "eu-west-1",
+    "source_ami": "ami-b4a79dd2",
+    "instance_type": "t2.micro",
+    "ssh_username": "ubuntu",
+    "ami_name": "ubuntu17.04-base {{timestamp}}"
+  },{
+    "type": "virtualbox-iso",
+    "guest_os_type": "Ubuntu_64",
+    "iso_url": "http://releases.ubuntu.com/17.04/ubuntu-17.04-server-amd64.iso",
+    "iso_checksum": "4672ce371fb3c1170a9e71bc4b2810b9",
+    "iso_checksum_type": "md5",
+    "http_directory": "http",
+    "boot_wait": "5s",
+    "boot_command": [
+      "<esc><wait>",
+      "<esc><wait>",
+      "<enter><wait>",
+      "/install/vmlinuz ",
+      "initrd=/install/initrd.gz ",
+      "net.ifnames=0 ",
+      "auto-install/enable=true ",
+      "debconf/priority=critical ",
+      "preseed/url=http://{{.HTTPIP}}:{{.HTTPPort}}/preseed.cfg ",
+      "<enter>"
+    ],
+    "ssh_username": "ubuntu",
+    "ssh_password": "ubuntu",
+    "name": "BabelMeetup-vbox-base",
+    "output_directory": "{{env `vboximages`}}",
+     "shutdown_command": "sudo systemctl poweroff"
+  }],
+  "provisioners": [{
+    "type": "file",
+    "source": "./files/authorized_keys",
+    "destination": "/tmp/authorized_keys"
+  },{
+    "type": "shell",
+    "inline": [
+        "sleep 20",
+        "sudo apt-get update",
+        "sudo apt-get install -y python",
+        "sudo mkdir -pm 700 /home/ubuntu/.ssh/",
+        "sudo chown ubuntu:ubuntu /home/ubuntu/.ssh/",
+        "sudo mv /tmp/authorized_keys /home/ubuntu/.ssh/authorized_keys",
+        "sudo chown ubuntu:ubuntu /home/ubuntu/.ssh/authorized_keys",
+        "sudo chmod 600 /home/ubuntu/.ssh/authorized_keys"
+    ]
+  }],
+  "post-processors":[{
+      "type": "vagrant",
+      "keep_input_artifact": true
+  }]
+}
