@@ -6,7 +6,9 @@
 * **Fecha**: 22 de Mayo de 2017
 * **Lugar**: [Campus Madrid](https://www.campus.co/madrid/es)
 
-Repositorio con la demo utilizada incluyendo videos y demos. Para verla simplemente clona el repositorio y abre con tu navegador index.html.
+Repositorio con la demo utilizada incluyendo vídeos y demos. Para verla simplemente clona el repositorio y abre con tu navegador index.html.
+
+**AVISO**: Por simplicidad en los ejemplos utilizados se ha dejado de lado aspectos de seguridad importantes como la limitación de acceso por ssh y el cambio de contraseña de los usuarios creados. Entiéndase que no son ejemplos funcionales ni pensados para utilizar en entornos productivos.
 
 ## DEMOS
 
