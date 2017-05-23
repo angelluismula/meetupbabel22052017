@@ -1,0 +1,7 @@
+---
+redis_enable_persistence: true
+redis_scheduled_rewriting: false
+
+
+
+

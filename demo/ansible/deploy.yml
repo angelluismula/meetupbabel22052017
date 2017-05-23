@@ -1,0 +1,27 @@
+- hosts: PRO
+  tasks:
+  - name: Definir timezone
+    timezone:
+      name: Europe/Madrid
+    become: yes
+  roles:
+  - mrlesmithjr.ntp
+
+- hosts: webserver
+  tasks:
+    - name: Instalar servidor web
+      apt: 
+        pkg: "{{ item }}"
+      become: yes
+      with_items: 
+        - "apache2"
+        - "php-fpm"
+    - name: Asegurar que está corriendo apache
+      service: 
+        name: apache2
+        state: started
+
+- hosts: redis
+  roles:
+    - tschifftner.redis
+  become: yes

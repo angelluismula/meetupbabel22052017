@@ -1,0 +1,4 @@
+ansible_ssh_user: ubuntu
+ntp_servers:
+  - "2.es.pool.ntp.org"
+  - "3.europe.pool.ntp.org"
