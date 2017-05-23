@@ -56,7 +56,7 @@ demo/ansible/
 
 * [Terraform](https://www.terraform.io/)
 
-**Copy variables.tf.example to variables.tf **;
+**Copy variables.tf.example to variables.tf**;
 
 **Set your AWS credentials in variables.tf**;
 
